@@ -82,7 +82,8 @@
 ;; ;(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
 ;; ;(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 ;; ;(add-hook 'after-init-hook 'inf-ruby-switch-setup)
-
+(use-package inf-ruby
+  :config (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
 ;; ;; Projectile everywhere
 ;; (projectile-global-mode)
@@ -152,7 +153,7 @@
     (setq smartparens-strict-mode t)
     (setq sp-autoescape-string-quote nil)
     (setq sp-autoinsert-if-followed-by-word t)
-    ;;(sp-local-pair 'emacs-lisp-mode "`" nil :when '(sp-in-string-p))
+    (sp-local-pair 'emacs-lisp-mode "`" nil :when '(sp-in-string-p))
     ))
 
 (use-package css-mode
