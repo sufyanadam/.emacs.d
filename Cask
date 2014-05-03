@@ -38,6 +38,7 @@
 (depends-on "git-commit-mode")
 (depends-on "git-gutter")
 (depends-on "git-gutter-fringe")
+(depends-on "git-messenger")
 (depends-on "git-rebase-mode")
 (depends-on "gitconfig-mode")
 (depends-on "gitconfig-mode")
