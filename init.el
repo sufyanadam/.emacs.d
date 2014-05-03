@@ -86,7 +86,12 @@
 (use-package projectile
   :init
   (progn
-    (projectile-global-mode)))
+    (projectile-global-mode))
+  :bind( 
+        ("s-T" . projectile-toggle-between-implementation-and-test)
+        ("s-O" . projectile-find-file)
+        )
+)
 
 ;; Setup Ruby
 (use-package ruby-mode
