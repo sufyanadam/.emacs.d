@@ -140,7 +140,7 @@
                         (setq web-mode-style-padding 2)
                         (setq web-mode-script-padding 2)))))
 
-(use-package smarparens
+(use-package smartparens
   :init
   (progn
     (use-package smartparens-config)
