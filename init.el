@@ -252,6 +252,14 @@
 (use-package ido-vertical-mode
              :init (ido-vertical-mode))
 
+;; ido everywhere
+(use-package ido-ubiquitous
+  :init (ido-ubiquitous-mode 1))
+
+(use-package ido-at-point
+  :init (ido-at-point-mode)
+  :bind ("C-," . completion-at-point))
+
 (use-package smex
   :init (smex-initialize)
   :bind ("C-c x" . smex))
