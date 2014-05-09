@@ -1,6 +1,7 @@
 ;; Setup load path
 (add-to-list 'load-path user-emacs-directory)
-
+(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
+(add-to-list 'load-path defuns-dir)
 ;; Setup packages
 (require 'setup-packages)
 
@@ -55,10 +56,10 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; Functions (load all files in defuns-dir)
-(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-(dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
+;; (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
+;; (dolist (file (directory-files defuns-dir t "\\w+"))
+;;   (when (file-regular-p file)
+;;     (load file)))
 
 ;; Fill column indicator
 (require 'fill-column-indicator)
@@ -71,6 +72,7 @@
 
 ;; Packages
 (require 'use-package)
+
 (use-package nyan-mode
              :init (nyan-mode 1))
 
@@ -92,13 +94,13 @@
   )
 
 ;; Setup Ruby
-(use-package ruby-mode
+(use-package enh-ruby-mode
   :config
   (progn
-    (add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby)
+    (add-hook 'enh-ruby-mode-hook 'rvm-activate-corresponding-ruby)
     (setq ruby-deep-indent-paren nil)
     (use-package rvm
-      :init (rvm-use-default))
+      :commands rvm-use-default)
     (use-package ruby-tools)
     (use-package rhtml-mode)
     (use-package web-mode
@@ -113,19 +115,20 @@
           (let ((shell-file-name "/bin/bash"))
             ad-do-it))))
     )
-  :mode (("\\.rake$" . ruby-mode)
-         ("\\.gemspec$" . ruby-mode)
-         ("\\.ru$" . ruby-mode)
-         ("Rakefile$" . ruby-mode)
-         ("Gemfile$" . ruby-mode)
-         ("Capfile$" . ruby-mode)
-         ("Guardfile$" . ruby-mode)
-         ("\\.rb\\$" . ruby-mode))
+  :mode (("\\.rake$" . enh-ruby-mode)
+         ("\\.gemspec$" . enh-ruby-mode)
+         ("\\.ru$" . enh-ruby-mode)
+         ("Rakefile$" . enh-ruby-mode)
+         ("Gemfile$" . enh-ruby-mode)
+         ("Capfile$" . enh-ruby-mode)
+         ("Guardfile$" . enh-ruby-mode)
+         ("\\.rb\\$" . enh-ruby-mode))
   :interpreter "ruby")
 
 
 (use-package web-mode
   :config (progn
+            (use-package my-html-defuns)
             (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
             (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
             (add-hook 'web-mode-hook
@@ -384,9 +387,16 @@
   :config
   (progn
     (use-package slime-autoloads
-      :init
-      (setq inferior-lisp-program "/usr/local/bin/sbcl")
-      (setq slime-contribs '(slime-fancy))
-      (slime-setup))))
+      :commands slime-setup
+      :config
+      (progn
+        (setq inferior-lisp-program "/usr/local/bin/sbcl")
+        (setq slime-contribs '(slime-fancy))))))
+
+;; personal defuns
+(use-package editing-defuns)
+(use-package file-defuns)
+(use-package folding)
+(use-package lisp-defuns)
 
 (put 'erase-buffer 'disabled nil)

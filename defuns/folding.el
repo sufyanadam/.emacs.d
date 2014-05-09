@@ -28,3 +28,5 @@
      (define-key map (kbd "0") 'clear-selective-display)
      map))
   (message "Type + to reveal more, - for less, 0 to reset."))
+
+(provide 'folding)

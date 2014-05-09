@@ -355,3 +355,5 @@ region-end is used."
       (comment-or-uncomment-region
        (progn (goto-char min) (line-beginning-position))
        (progn (goto-char max) (line-end-position))))))
+
+(provide 'editing-defuns)

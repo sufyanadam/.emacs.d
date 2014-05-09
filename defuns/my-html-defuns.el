@@ -22,3 +22,5 @@
 (defun buffer-to-html (buffer)
   (with-current-buffer (htmlize-buffer buffer)
     (buffer-string)))
+
+(provide 'my-html-defuns)

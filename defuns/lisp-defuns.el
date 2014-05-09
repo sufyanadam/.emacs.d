@@ -9,3 +9,5 @@
              (current-buffer))
     (error (message "Invalid expression")
            (insert (current-kill 0)))))
+
+(provide 'lisp-defuns)
