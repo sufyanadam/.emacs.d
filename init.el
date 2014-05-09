@@ -84,20 +84,19 @@
 
 ;; Projectile everywhere
 (use-package projectile
-  :init
-  (progn
-    (projectile-global-mode))
+  :commands projectile-global-mode
   :bind( 
         ("s-T" . projectile-toggle-between-implementation-and-test)
         ("s-O" . projectile-find-file)
         )
-)
+  )
 
 ;; Setup Ruby
 (use-package ruby-mode
-  :defer t
-  :init
- (progn
+  :config
+  (progn
+    (add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby)
+    (setq ruby-deep-indent-paren nil)
     (use-package rvm
       :init (rvm-use-default))
     (use-package ruby-tools)
@@ -112,44 +111,36 @@
         (defadvice rspec-compile (around rspec-compile-around activate)
           "Use BASH shel for running the specs"
           (let ((shell-file-name "/bin/bash"))
-            ad-do-it)))))
-           
- :config
- (progn
-   (add-hook 'ruby-mode-hook 'rvm-activate-corresponding-ruby)
-   (setq ruby-deep-indent-paren nil))
-
- :mode (("\\.rake$" . ruby-mode)
-        ("\\.gemspec$" . ruby-mode)
-        ("\\.ru$" . ruby-mode)
-        ("Rakefile$" . ruby-mode)
-        ("Gemfile$" . ruby-mode)
-        ("Capfile$" . ruby-mode)
-        ("Guardfile$" . ruby-mode)
-        ("\\.rb\\$" . ruby-mode))
- :interpreter "ruby")
+            ad-do-it))))
+    )
+  :mode (("\\.rake$" . ruby-mode)
+         ("\\.gemspec$" . ruby-mode)
+         ("\\.ru$" . ruby-mode)
+         ("Rakefile$" . ruby-mode)
+         ("Gemfile$" . ruby-mode)
+         ("Capfile$" . ruby-mode)
+         ("Guardfile$" . ruby-mode)
+         ("\\.rb\\$" . ruby-mode))
+  :interpreter "ruby")
 
 
 (use-package web-mode
-  :init (progn
-          (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-          (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
   :config (progn
+            (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+            (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
             (add-hook 'web-mode-hook
                       (lambda ()
                         (setq web-mode-style-padding 2)
                         (setq web-mode-script-padding 2)))))
 
 (use-package smartparens
-  :init
+  :config
   (progn
     (use-package smartparens-config)
     (use-package smartparens-ruby)
     (use-package smartparens-html)
     (smartparens-global-mode 1)
-    (show-smartparens-global-mode 1))
-  :config
-  (progn
+    (show-smartparens-global-mode 1)
     (setq smartparens-strict-mode t)
     (setq sp-autoescape-string-quote nil)
     (setq sp-autoinsert-if-followed-by-word t)
@@ -187,8 +178,7 @@
   :config (add-to-list 'emacs-lisp-mode-hook 'ert-async-activate-font-lock-keywords))
 
 (use-package emacs-lisp-mode
-  :defer t
-  :init
+  :config
   (progn
     (use-package eldoc
       :init (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode))
@@ -206,12 +196,11 @@
 
 (use-package eshell
   :bind ("M-e" . eshell)
-  :init
-  (add-hook 'eshell-first-time-mode-hook
-            (lambda ()
-              (add-to-list 'eshell-visual-commands "htop")))
   :config
   (progn
+    (add-hook 'eshell-first-time-mode-hook
+              (lambda ()
+                (add-to-list 'eshell-visual-commands "htop")))
     (setq eshell-history-size 5000)
     (setq eshell-save-history-on-exit t)))
 
@@ -391,180 +380,13 @@
     )
   )
 
+(use-package slime
+  :config
+  (progn
+    (use-package slime-autoloads
+      :init
+      (setq inferior-lisp-program "/usr/local/bin/sbcl")
+      (setq slime-contribs '(slime-fancy))
+      (slime-setup))))
 
-
-
-
-
-
-
-
-
-;; Setup coffee-mode
-;(load "setup-coffee-mode.el")
-
-
-;; Setup edbi
-;(setenv "PERL5LIB" (concat "/Users/" user-login-name "/perl5/lib/perl5"))
-
-;; Setup haml-mode
-;(add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
-
-;; Setup php-mode
-;(add-hook 'php-mode-hook
-          ;; (lambda ()
-          ;;   (setq indent-tabs-mode nil
-          ;;         tab-width 2)))
-
-;; Setup popwin
-;(require 'popwin)
-;(custom-set-variables
-; '(display-buffer-function 'popwin:display-buffer))
-
-;; Setup rcodetools
-;(require 'rcodetools)
-
-;; Setup rinari
-;(require 'rinari)
-
-;(add-hook 'ruby-mode-hook
-          ;; (lambda ()
-          ;;   (rvm-activate-corresponding-ruby)
-          ;;   (ruby-electric-mode)
-          ;;   (setq rinari-tags-file-name "TAGS")))
-
-;(add-hook 'ruby-mode-hook 'robe-mode)
-;(add-hook 'robe-mode-hook 'robe-start)
-
-;; Setup skewer mode
-;; (add-hook 'js2-mode-hook 'skewer-mode)
-;; (add-hook 'css-mode-hook 'skewer-css-mode)
-;; (add-hook 'html-mode-hook 'skewer-html-mode)
-
-;; Setup slime
-;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
-;;(setq inferior-lisp-program "sbcl")
-
-;; (require 'ac-slime)
-;; (add-hook 'slime-mode-hook 'set-up-slime-ac)
-;; (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-;; (eval-after-load "auto-complete"
-;;   '(add-to-list 'ac-modes 'slime-repl-mode))
-
-
-
-;; guide-key
-;(require 'guide-key)
-;; (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x 8" "C-x +"))
-;; (guide-key-mode 1)
-;; (setq guide-key/recursive-key-sequence-flag t)
-;; (setq guide-key/popup-window-position 'bottom)
-
-;; Setup extensions
-;(eval-after-load 'ido '(require 'setup-ido))
-;(require 'setup-org)
-;;(eval-after-load 'dired '(require 'setup-dired))
-;(eval-after-load 'magit '(require 'setup-magit))
-;(eval-after-load 'grep '(require 'setup-rgrep))
-;(eval-after-load 'shell '(require 'setup-shell))
-;(require 'setup-hippie)
-;(require 'setup-yasnippet)
-;(require 'setup-perspective)
-;(require 'setup-ffip)
-;(require 'setup-html-mode)
-;(require 'setup-paredit)
-
-;; Font lock dash.el
-;(eval-after-load "dash" '(dash-enable-font-lock))
-
-;; Default setup of smartparens
-;; (require 'smartparens-config)
-;; (setq sp-autoescape-string-quote nil)
-;; (--each '(css-mode-hook
-;;           restclient-mode-hook
-;;           js-mode-hook
-;;           java-mode
-;;           ruby-mode
-;;           markdown-mode
-;;           groovy-mode)
-;;   (add-hook it 'turn-on-smartparens-mode))
-
-;; Language specific setup files
-;; (eval-after-load 'js2-mode '(require 'setup-js2-mode))
-;; (eval-after-load 'ruby-mode '(require 'setup-ruby-mode))
-;; (eval-after-load 'clojure-mode '(require 'setup-clojure-mode))
-;; (eval-after-load 'markdown-mode '(require 'setup-markdown-mode))
-
-;; Load stuff on demand
-;; (autoload 'skewer-start "setup-skewer" nil t)
-;; (autoload 'skewer-demo "setup-skewer" nil t)
-;; (autoload 'flycheck-mode "setup-flycheck" nil t)
-;; (autoload 'auto-complete-mode "auto-complete" nil t)
-
-;; Map files to modes
-;;(require 'mode-mappings)
-
-;; Highlight escape sequences
-;; (require 'highlight-escape-sequences)
-;; (hes-mode)
-;; (put 'font-lock-regexp-grouping-backslash 'face-alias 'font-lock-builtin-face)
-
-;; Visual regexp
-;; (require 'visual-regexp)
-;; (define-key global-map (kbd "M-&") 'vr/query-replace)
-;; (define-key global-map (kbd "M-/") 'vr/replace)
-
-;; Functions (load all files in defuns-dir)
-;; (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-;; (dolist (file (directory-files defuns-dir t "\\w+"))
-;;   (when (file-regular-p file)
-;;     (load file)))
-
-;; Load reasonably default keybindings
-;(load "key-bindings.el")
-
-;; (require 'expand-region)
-;; (require 'multiple-cursors)
-;; (require 'delsel)
-;; (require 'jump-char)
-;; (require 'wgrep)
-;; (require 'smart-forward)
-;; (require 'change-inner)
-;; (require 'multifiles)
-
-;; Fill column indicator
-;; (require 'fill-column-indicator)
-;; (setq fci-rule-color "#111122")
-
-;; Browse kill ring
-;; (require 'browse-kill-ring)
-;; (setq browse-kill-ring-quit-action 'save-and-restore)
-
-;; ;; Smart M-x is smart
-;; (require 'smex)
-;; (smex-initialize)
-
-
-;; Elisp go-to-definition with M-. and back again with M-,
-;; (autoload 'elisp-slime-nav-mode "elisp-slime-nav")
-;; (add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode t) (eldoc-mode 1)))
-
-;(when is-mac (require 'mac))
-
-;; Fix whitespace on save, but only if the file was clean
-;(global-whitespace-cleanup-mode)
-
-;(require 'multiple-cursors)
-
-;; Show line numbers for all files
-;(add-hook 'find-file-hook (lambda () (linum-mode 1)))
-
-;; Emacs server
-;(require 'server)
-;(unless (server-running-p)
-;  (server-start))
-
-;; Conclude init by setting up specifics for the current user
-;(when (file-exists-p user-settings-dir)
-;  (mapc 'load (directory-files user-settings-dir nil "^[^#].*el$")))
-
+(put 'erase-buffer 'disabled nil)

@@ -98,6 +98,7 @@
 (depends-on "skewer-less")
 (depends-on "skewer-mode")
 (depends-on "slim-mode")
+(depends-on "slime")
 (depends-on "smart-forward")
 (depends-on "smartparens")
 (depends-on "smartparens")
