@@ -4,3 +4,4 @@ elpa/
 history
 projectile-bookmarks.eld
 *#
+.mc-lists.el
