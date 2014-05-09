@@ -198,7 +198,6 @@
 (use-package sass-mode)
 
 (use-package eshell
-  :bind ("M-e" . eshell)
   :config
   (progn
     (add-hook 'eshell-first-time-mode-hook
@@ -255,7 +254,7 @@
 
 (use-package smex
   :init (smex-initialize)
-  :bind ("M-x" . smex))
+  :bind ("C-c x" . smex))
 
 (use-package magit
   :config
