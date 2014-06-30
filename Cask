@@ -68,6 +68,7 @@
 (depends-on "ido-ubiquitous")
 (depends-on "ido-vertical-mode")
 (depends-on "idomenu")
+(depends-on "impatient-mode")
 (depends-on "inf-ruby")
 (depends-on "inflections")
 (depends-on "jabber")
