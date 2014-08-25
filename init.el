@@ -2,19 +2,15 @@
 (add-to-list 'load-path user-emacs-directory)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
 (add-to-list 'load-path defuns-dir)
+
 ;; Setup packages
 (require 'setup-packages)
 
 ;; Setup appearance
 (require 'appearance)
 
-(defalias 'λ 'lambda)
-
-;; shorthand for interactive lambdas
-(defmacro Λ (&rest body)
-  `(λ ()
-     (interactive)
-     ,@body))
+;; Use λ for lambda
+(require 'real-lambda)
 
 ;; Use fn key as Hyper
 (setq ns-function-modifier 'hyper)
@@ -58,11 +54,6 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;; Functions (load all files in defuns-dir)
-;; (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-;; (dolist (file (directory-files defuns-dir t "\\w+"))
-;;   (when (file-regular-p file)
-;;     (load file)))
 
 ;; Fill column indicator
 (require 'fill-column-indicator)
