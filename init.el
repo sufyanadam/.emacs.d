@@ -20,6 +20,9 @@
 ;; Toggle EVIL mode
 (global-set-key (kbd "C-c e") (Λ (evil-mode 'toggle)))
 
+;; Be Evil by default
+(evil-mode 1)
+
 ;; Settings for currently logged in user
 (setq user-settings-dir
       (concat user-emacs-directory "users/" user-login-name))
