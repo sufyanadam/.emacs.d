@@ -1,11 +1,11 @@
 (load-theme 'zenburn :no-confirm)
 
 ;; Coding font
-(set-default-font "Consolas-16")
-(add-to-list 'default-frame-alist '(font . "Consolas-16"))
+;; (set-default-font "Consolas-16")
+;; (add-to-list 'default-frame-alist '(font . "Consolas-16"))
 
-;;(set-default-font "Anonymice Powerline-18")
-;;(add-to-list 'default-frame-alist '(font . "Anonymice Powerline-18"))
+(set-default-font "Anonymice Powerline-18")
+(add-to-list 'default-frame-alist '(font . "Anonymice Powerline-18"))
 
 
 (setq

@@ -6,6 +6,8 @@
 (depends-on "ac-js2")
 (depends-on "ac-slime")
 (depends-on "ag")
+(depends-on "ample-theme")
+(depends-on "ample-zen-theme")
 (depends-on "anything")
 (depends-on "auto-complete")
 (depends-on "bash-completion")
