@@ -41,6 +41,7 @@
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")
 (depends-on "f")
+(depends-on "feature-mode")
 (depends-on "fill-column-indicator")
 (depends-on "find-file-in-project")
 (depends-on "findr")
