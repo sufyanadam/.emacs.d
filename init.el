@@ -1,17 +1,9 @@
-;;Disable dialogs
-(defadvice yes-or-no-p (around prevent-dialog activate)
-  "Prevent yes-or-no-p from activating a dialog"
-  (let ((use-dialog-box nil))
-    ad-do-it))
-(defadvice y-or-n-p (around prevent-dialog-yorn activate)
-  "Prevent y-or-n-p from activating a dialog"
-  (let ((use-dialog-box nil))
-    ad-do-it))
-
 ;; Setup load path
 (add-to-list 'load-path user-emacs-directory)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
+(setq quicklisp-dir "~/quicklisp")
 (add-to-list 'load-path defuns-dir)
+(add-to-list 'load-path quicklisp-dir)
 
 ;; Setup packages
 (require 'setup-packages)
@@ -30,9 +22,6 @@
 ;; Toggle EVIL mode
 (global-set-key (kbd "C-c e") (Λ (evil-mode 'toggle)))
 
-;; Be Evil by default
-(evil-mode 1)
-
 ;; Settings for currently logged in user
 (setq user-settings-dir
       (concat user-emacs-directory "users/" user-login-name))
@@ -44,10 +33,6 @@
 ;; Sane defaults 
 (require 'sane-defaults)
 
-;; Setup display time
-(setq display-time-24hr-format t)
-(display-time)
-
 ;; Set default directory to home
 (setq default-directory (f-full (getenv "HOME")))
 
@@ -55,9 +40,6 @@
 (setq undo-tree-mode-lighter "")
 (require 'undo-tree)
 (global-undo-tree-mode)
-
-;; Keep cursor away from edges when scrolling up/down
-(require 'smooth-scrolling)
 
 (when is-mac
   ;; Setup environment variables from the user's shell
@@ -67,15 +49,12 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-
-;; Fill column indicator
-(require 'fill-column-indicator)
-(setq fci-rule-color "#111122")
-
 (add-hook 'emacs-startup-hook
 	  (λ ()
 	    (when (string= (buffer-name) "*scratch*")
-	      (animate-string (format ";; I am ready for you, master %s" (capitalize (user-login-name))) (/ (frame-height) 2)))))
+	      (animate-string (format ";; I am ready for you, master %s" 
+                                      (capitalize (user-login-name))) 
+                              (/ (frame-height) 2)))))
 
 ;; Packages
 (require 'use-package)
@@ -85,7 +64,6 @@
 
 (use-package nyan-prompt
              :config (add-hook 'eshell-load-hook 'nyan-prompt-enable))
-
 
 ;; Setup inf-ruby
 (use-package inf-ruby
@@ -131,7 +109,6 @@
          ("Guardfile$" . enh-ruby-mode)
          ("\\.rb\\$" . enh-ruby-mode))
   :interpreter "ruby")
-
 
 (use-package web-mode
   :config (progn
@@ -200,7 +177,6 @@
   :mode ("Cask" . emacs-lisp-mode))
 
 (use-package html-script-src)
-
 (use-package haml-mode)
 (use-package sass-mode)
 
@@ -397,20 +373,16 @@
     )
   )
 
-(use-package slime
-  :config
-  (progn
-    (use-package slime-autoloads
-      :commands slime-setup
-      :config
-      (progn
-        (setq inferior-lisp-program "/usr/local/bin/sbcl")
-        (setq slime-contribs '(slime-fancy))))))
-
 ;; personal defuns
 (use-package editing-defuns)
 (use-package file-defuns)
 (use-package folding)
 (use-package lisp-defuns)
+(use-package config-options)
+(use-package personal-keybindings)
+
+;; quicklisp
+(use-package slime-helper)
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
 
 (put 'erase-buffer 'disabled nil)
