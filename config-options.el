@@ -23,3 +23,6 @@
 (setq fci-rule-color "#111122")
 
 (provide 'config-options)
+
+;; Disable undo buffer warning
+(add-to-list 'warning-suppress-types '(undo discard-info))
