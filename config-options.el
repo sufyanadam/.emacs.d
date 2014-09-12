@@ -22,10 +22,16 @@
 (require 'fill-column-indicator)
 (setq fci-rule-color "#111122")
 
-(provide 'config-options)
-
 ;; Disable undo buffer warning
 (add-to-list 'warning-suppress-types '(undo discard-info))
 
 ;; Enable erasing of buffer
 (put 'erase-buffer 'disabled nil)
+
+(projectile-global-mode 1)
+
+
+;; TODO
+;; bind smartparens surround mode with a more convenient keybinding
+;; contextual selection like rubymine, eg. 
+(provide 'config-options)
