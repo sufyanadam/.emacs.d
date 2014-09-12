@@ -26,3 +26,6 @@
 
 ;; Disable undo buffer warning
 (add-to-list 'warning-suppress-types '(undo discard-info))
+
+;; Enable erasing of buffer
+(put 'erase-buffer 'disabled nil)

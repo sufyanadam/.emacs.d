@@ -30,7 +30,7 @@
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
 
-;; Sane defaults 
+;; Sane defaults
 (require 'sane-defaults)
 
 ;; Set default directory to home
@@ -45,15 +45,15 @@
   ;; Setup environment variables from the user's shell
   (require-package 'exec-path-from-shell)
   (exec-path-from-shell-initialize))
-  
+
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (add-hook 'emacs-startup-hook
-	  (λ ()
-	    (when (string= (buffer-name) "*scratch*")
-	      (animate-string (format ";; I am ready for you, master %s" 
-                                      (capitalize (user-login-name))) 
+          (λ ()
+            (when (string= (buffer-name) "*scratch*")
+              (animate-string (format ";; I am ready for you, master %s"
+                                      (capitalize (user-login-name)))
                               (/ (frame-height) 2)))))
 
 ;; Packages
@@ -72,7 +72,7 @@
 ;; Projectile everywhere
 (use-package projectile
   :commands projectile-global-mode
-  :bind( 
+  :bind(
         ("s-T" . projectile-toggle-between-implementation-and-test)
         ("s-O" . projectile-find-file)
         )
@@ -382,7 +382,8 @@
 (use-package personal-keybindings)
 
 ;; quicklisp
-(use-package slime-helper)
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
-
-(put 'erase-buffer 'disabled nil)
+(if (file-exists-p
+     (expand-file-name "slime-helper.el" quicklisp-dir))
+    (progn
+      (use-package slime-helper)
+      (setq inferior-lisp-program "/usr/local/bin/sbcl")))
