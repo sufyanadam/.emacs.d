@@ -1,7 +1,8 @@
 ;; Setup load path
-(add-to-list 'load-path user-emacs-directory)
+(setq config-dir (expand-file-name "lisp" user-emacs-directory))
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
 (setq quicklisp-dir "~/quicklisp")
+(add-to-list 'load-path config-dir)
 (add-to-list 'load-path defuns-dir)
 (add-to-list 'load-path quicklisp-dir)
 

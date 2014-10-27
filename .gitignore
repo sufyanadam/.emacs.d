@@ -9,3 +9,4 @@ backups/
 emms/
 *elc
 bookmarks
+async-bytecomp.log
