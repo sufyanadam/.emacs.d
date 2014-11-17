@@ -374,6 +374,13 @@
     )
   )
 
+;; quicklisp
+(if (file-exists-p
+     (expand-file-name "slime-helper.el" quicklisp-dir))
+    (progn
+      (use-package slime-helper)
+      (setq inferior-lisp-program "/usr/local/bin/sbcl")))
+
 ;; personal defuns
 (use-package editing-defuns)
 (use-package file-defuns)
@@ -381,10 +388,3 @@
 (use-package lisp-defuns)
 (use-package config-options)
 (use-package personal-keybindings)
-
-;; quicklisp
-(if (file-exists-p
-     (expand-file-name "slime-helper.el" quicklisp-dir))
-    (progn
-      (use-package slime-helper)
-      (setq inferior-lisp-program "/usr/local/bin/sbcl")))
