@@ -8,4 +8,6 @@
 (bind-key "C-c f" 'projectile-find-file)
 (bind-key "C-c C-t" 'projectile-toggle-between-implementation-and-test)
 (bind-key "C-c r" 'eval-and-replace)
+(bind-key "C-c c" 'inf-ruby-console-auto)
+
 (provide 'personal-keybindings)
