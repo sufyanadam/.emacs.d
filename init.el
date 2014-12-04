@@ -84,6 +84,7 @@
   :config
   (progn
     (add-hook 'enh-ruby-mode-hook 'rvm-activate-corresponding-ruby)
+    (setq rinari-tags-file-name "TAGS")
     (setq ruby-deep-indent-paren nil)
     (use-package rvm
       :commands rvm-use-default)
