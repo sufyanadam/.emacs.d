@@ -1,11 +1,11 @@
 (require 'auto-cask)
 (auto-cask/setup)
-;(require 'use-package)
-;(require 'pallet)
-;(require 'package)
+(require 'use-package)
+(require 'pallet)
+(require 'package)
 
 ;; Add melpa to package repos
-;; (add-to-list 'package-archives 
+;;(add-to-list 'package-archives 
 ;;              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ;; (add-to-list 'package-archives
 ;;              '("org" . "http://orgmode.org/elpa/") t)

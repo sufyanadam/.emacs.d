@@ -7,50 +7,50 @@
 (add-to-list 'load-path config-dir)
 (add-to-list 'load-path defuns-dir)
 (add-to-list 'load-path quicklisp-dir)
+;; Settings for currently logged in user
+(setq user-settings-dir
+      (concat user-emacs-directory "users/" user-login-name))
+(add-to-list 'load-path user-settings-dir)
 
 ;; Setup packages
 (require 'setup-packages)
 
-;; ;; Setup appearance
-;; (require 'appearance)
+;; Setup appearance
+(require 'appearance)
 
-;; ;; Use λ for lambda
-;; (require 'real-lambda)
+;; Use λ for lambda
+(require 'real-lambda)
 
-;; ;; Use fn key as Hyper
-;; (setq ns-function-modifier 'hyper)
-;; (global-set-key (kbd "H-l") (Λ (insert "\u03bb")))
-;; (global-set-key (kbd "H-L") (Λ (insert "\u039B")))
+;; Use fn key as Hyper
+(setq ns-function-modifier 'hyper)
+(global-set-key (kbd "H-l") (Λ (insert "\u03bb")))
+(global-set-key (kbd "H-L") (Λ (insert "\u039B")))
 
-;; ;; Toggle EVIL mode
-;; (global-set-key (kbd "C-c e") (Λ (evil-mode 'toggle)))
+;; Toggle EVIL mode
+(global-set-key (kbd "C-c e") (Λ (evil-mode 'toggle)))
 
-;; ;; Settings for currently logged in user
-;; (setq user-settings-dir
-;;       (concat user-emacs-directory "users/" user-login-name))
-;; (add-to-list 'load-path user-settings-dir)
+;; Are we on a mac?
+(setq is-mac (equal system-type 'darwin))
 
-;; ;; Are we on a mac?
-;; (setq is-mac (equal system-type 'darwin))
+;; Sane defaults
+(require 'sane-defaults)
 
-;; ;; Sane defaults
-;; (require 'sane-defaults)
+;; Set default directory to home
+(setq default-directory (f-full (getenv "HOME")))
 
-;; ;; Set default directory to home
-;; (setq default-directory (f-full (getenv "HOME")))
+;; Represent undo-history as an actual tree (visualize with C-x u)
+(setq undo-tree-mode-lighter "")
+(require 'undo-tree)
+(global-undo-tree-mode)
 
-;; ;; Represent undo-history as an actual tree (visualize with C-x u)
-;; (setq undo-tree-mode-lighter "")
-;; (require 'undo-tree)
-;; (global-undo-tree-mode)
+(when is-mac
+  ;; Setup environment variables from the user's shell
+  (use-package exec-path-from-shell
+    :idle (exec-path-from-shell-initialize))
+  )
 
-;; (when is-mac
-;;   ;; Setup environment variables from the user's shell
-;;   (require-package 'exec-path-from-shell)
-;;   (exec-path-from-shell-initialize))
-
-;; (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; (add-hook 'emacs-startup-hook
 ;;           (λ ()
@@ -419,3 +419,5 @@
 	       (message "Loading %s...done (%.3fs) [after-init]"
 			,load-file-name elapsed)))
 	  t)
+
+
