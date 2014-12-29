@@ -255,14 +255,14 @@
     ))
 
 (use-package flx-ido
-  :idle (flx-ido-mode 1))
+  :config (flx-ido-mode 1))
 
 (use-package ido-vertical-mode
-  :idle (ido-vertical-mode))
+  :config (ido-vertical-mode))
 
 ;; ido everywhere
 (use-package ido-ubiquitous
-  :idle (ido-ubiquitous-mode 1))
+  :config (ido-ubiquitous-mode 1))
 
 (use-package ido-at-point
   :init (ido-at-point-mode)
