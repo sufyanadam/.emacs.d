@@ -38,11 +38,6 @@
 ;; Set default directory to home
 (setq default-directory (f-full (getenv "HOME")))
 
-;; Represent undo-history as an actual tree (visualize with C-x u)
-(setq undo-tree-mode-lighter "")
-(require 'undo-tree)
-(global-undo-tree-mode)
-
 (when is-mac
   ;; Setup environment variables from the user's shell
   (use-package exec-path-from-shell
@@ -52,15 +47,12 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-
-
 (add-hook 'emacs-startup-hook
           (λ ()
             (when (string= (buffer-name) "*scratch*")
               (animate-string (format ";; I am ready for you, master %s"
                                       (capitalize (user-login-name)))
                               (/ (frame-height) 2)))))
-
 
 ;; personal defuns
 (use-package editing-defuns)
@@ -75,8 +67,17 @@
   :config
   (evil-mode))
 
+;; Represent undo-history as an actual tree (visualize with C-x u)
+(setq undo-tree-mode-lighter "")
+(use-package undo-tree
+  :config (global-undo-tree-mode))
+
 (use-package ace-jump-mode
-  :bind ("C-c j" . ace-jump-mode))
+  :commands ace-jump-mode
+  :init
+  (progn
+    (bind-key "SPC" 'ace-jump-mode evil-normal-state-map))
+    (bind-key "C-c SPC" 'ace-jump-mode))
 
 (use-package nyan-mode
   :config
