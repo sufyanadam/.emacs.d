@@ -12,5 +12,7 @@
 (bind-key "C-c ag" 'ag)
 (bind-key "C-c d" 'duplicate-current-line-or-region)
 (bind-key "C-c '" 'toggle-quotes)
+(bind-key "C-c o" (Λ (insert "save_and_open_page")))
+(bind-key "C-c g" (Λ (insert "require 'factory_girl'; g = FactoryGirl; g.find_definitions")))
 
 (provide 'personal-keybindings)
