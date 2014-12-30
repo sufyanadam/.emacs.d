@@ -120,10 +120,7 @@
         (defadvice rspec-compile (around rspec-compile-around activate)
           "Use BASH shel for running the specs"
           (let ((shell-file-name "/bin/bash"))
-            ad-do-it)))
-      :mode (("\\.slim$")
-             ("\\.html.erb$")
-             ("\\.rb\\$")))
+            ad-do-it))))
     )
   :mode (("\\.rake$" . enh-ruby-mode)
          ("\\.gemspec$" . enh-ruby-mode)
