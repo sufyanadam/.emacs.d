@@ -64,7 +64,6 @@
 (depends-on "goto-chg")
 (depends-on "guide-key")
 (depends-on "haml-mode")
-(depends-on "helm")
 (depends-on "highlight-escape-sequences")
 (depends-on "highlight-indentation")
 (depends-on "html-script-src")
