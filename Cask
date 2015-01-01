@@ -9,7 +9,6 @@
 (depends-on "ag")
 (depends-on "ample-theme")
 (depends-on "ample-zen-theme")
-(depends-on "anything")
 (depends-on "auto-complete")
 (depends-on "bash-completion")
 (depends-on "bind-key")
