@@ -1,7 +1,10 @@
 (require 'auto-cask)
 (auto-cask/setup)
-(require 'use-package)
+
 (require 'pallet)
+(pallet-mode t)
+
+(require 'use-package)
 (require 'package)
 
 (provide 'setup-packages)
