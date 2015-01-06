@@ -15,4 +15,15 @@
 (bind-key "C-c o" (Λ (insert "save_and_open_page")))
 (bind-key "C-c g" (Λ (insert "require 'factory_girl'; g = FactoryGirl; g.find_definitions")))
 
+
+;; different jumps for different visual modes
+(defadvice evil-visual-line (before spc-for-line-jump activate)
+  (bind-key "SPC" 'evil-ace-jump-line-mode evil-motion-state-map))
+
+(defadvice evil-visual-char (before spc-for-char-jump activate)
+  (bind-key "SPC" 'evil-ace-jump-char-mode evil-motion-state-map))
+
+(defadvice evil-visual-block (before spc-for-char-jump activate)
+  (bind-key "SPC" 'evil-ace-jump-char-mode evil-motion-state-map))
+
 (provide 'personal-keybindings)
