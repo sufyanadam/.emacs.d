@@ -14,6 +14,11 @@
 (bind-key "C-c '" 'toggle-quotes)
 (bind-key "C-c o" (Λ (insert "save_and_open_page")))
 (bind-key "C-c g" (Λ (insert "require 'factory_girl'; g = FactoryGirl; g.find_definitions")))
+(bind-key "C-c l" (Λ (shell-command (concat
+                                     "open dict://"
+                                     (if (region-active-p)
+                                         (buffer-substring (region-beginning) (region-end))
+                                       (read-string "Lookup word: "))))))
 
 
 ;; different jumps for different visual modes
