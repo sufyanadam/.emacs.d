@@ -10,3 +10,6 @@ emms/
 *elc
 bookmarks
 async-bytecomp.log
+ido.last
+recentf
+smex-items
