@@ -18,7 +18,7 @@
                                      "open dict://"
                                      (if (region-active-p)
                                          (buffer-substring (region-beginning) (region-end))
-                                       (read-string "Lookup word: "))))))
+                                       (read-string "Lookup word: " (current-word)))))))
 
 
 ;; different jumps for different visual modes
