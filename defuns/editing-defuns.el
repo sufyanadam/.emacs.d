@@ -342,7 +342,7 @@ region-end is used."
     "http://www.google.com/search?ie=utf-8&oe=utf-8&q="
     (if (region-active-p)
         (buffer-substring (region-beginning) (region-end))
-      (read-string "Query: ")))))
+      (read-string "Query: " (current-word))))))
 
 (defun comment-or-uncomment-current-line-or-region ()
   "Comments or uncomments current current line or whole lines in region."
