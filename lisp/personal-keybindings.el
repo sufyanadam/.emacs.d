@@ -4,7 +4,7 @@
 
 (bind-key "M-[" 'er/expand-region)
 (bind-key "M-]" 'er/contract-region)
-
+(bind-key "<f5>" 'compile)
 (bind-key "C-c f" 'projectile-find-file)
 (bind-key "C-c C-t" 'projectile-toggle-between-implementation-and-test)
 (bind-key "C-c r" 'eval-and-replace)
