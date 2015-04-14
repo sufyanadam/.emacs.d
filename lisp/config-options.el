@@ -27,6 +27,12 @@
 
 (projectile-global-mode 1)
 
+
+;; Prevent magit release notes make a choice msg
+;; from showing up
+(setq magit-last-seen-setup-instructions "1.4.0")
+
+
 ;; TODO
 ;; bind smartparens surround mode with a more convenient keybinding
 (provide 'config-options)
