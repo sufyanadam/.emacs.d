@@ -164,12 +164,6 @@
 (use-package css-mode
   :config (setq css-indent-offset 2))
 
-;; (use-package js-mode
-;;   :mode ("\\.json$" . js-mode)
-;;   :config
-;;   (progn
-;;     (add-hook 'js-mode-hook (λ () (setq js-indent-level 2)))))
-
 (use-package js2-mode
   :mode (("\\.js$" . js2-mode)
          ("Jakefile$" . js2-mode))
