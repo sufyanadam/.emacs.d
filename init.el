@@ -7,6 +7,7 @@
 (add-to-list 'load-path config-dir)
 (add-to-list 'load-path defuns-dir)
 (add-to-list 'load-path quicklisp-dir)
+
 ;; Settings for currently logged in user
 (setq user-settings-dir
       (concat user-emacs-directory "users/" user-login-name))
@@ -66,6 +67,10 @@
 (use-package evil
   :config
   (evil-mode))
+
+(use-package zoom-frm
+  :config
+  (maximize-frame))
 
 ;; Represent undo-history as an actual tree (visualize with C-x u)
 (setq undo-tree-mode-lighter "")
