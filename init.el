@@ -396,8 +396,12 @@
 
 (use-package emms-setup
   :config
+  (progn
     (emms-all)
-    (emms-default-players))
+    (emms-default-players)
+    (defadvice evil-mode (before say-cheater activate)
+      (if (not (bound-and-true-p evil-mode))
+          (emms-play-file (concat user-emacs-directory "sounds/cheater.wav"))))))
 
 ;; quicklisp
 (if (file-exists-p

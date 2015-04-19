@@ -27,10 +27,6 @@
 
 (projectile-global-mode 1)
 
-(defadvice evil-mode (before say-cheater activate)
-  (if (not (bound-and-true-p evil-mode))
-      (emms-play-file (concat user-emacs-directory "sounds/cheater.wav"))))
-
 ;; Prevent magit release notes make a choice msg
 ;; from showing up
 (setq magit-last-seen-setup-instructions "1.4.0")
