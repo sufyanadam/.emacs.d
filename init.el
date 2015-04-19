@@ -70,7 +70,7 @@
 
 (use-package zoom-frm
   :config
-  (maximize-frame))
+  (when window-system (maximize-frame)))
 
 ;; Represent undo-history as an actual tree (visualize with C-x u)
 (setq undo-tree-mode-lighter "")
