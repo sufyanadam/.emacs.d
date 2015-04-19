@@ -16,9 +16,9 @@ Defined in `lisp/personal-keybindings.el`
   * Lookup word in dictionary: C-c l
 
 
-## Install
+## Install (OS X)
 
-* `brew install emacs --cocoa`
+* `brew install emacs --with-cocoa`
 * `brew install cask`
 * `git clone git@github.com:sufyanadam/.emacs-use-package ~/.emacs.d`
 * `cd ~/.emacs.d`
