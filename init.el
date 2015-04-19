@@ -394,6 +394,12 @@
     )
   )
 
+
+(use-package emms-setup
+  :config
+  (emms-all)
+  (emms-default-players))
+
 ;; quicklisp
 (if (file-exists-p
      (expand-file-name "slime-helper.el" quicklisp-dir))
