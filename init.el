@@ -86,7 +86,10 @@
 
 (use-package nyan-mode
   :config
-  (nyan-mode))
+  (progn
+    (setq nyan-wavy-trail t)
+    (nyan-mode)
+    (nyan-start-animation)))
 
 (use-package nyan-prompt
   :config
