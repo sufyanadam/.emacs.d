@@ -20,7 +20,7 @@
  '(org-hide-emphasis-markers t)
  '(org-hide-leading-stars t)
  '(org-pretty-entities t)
- '(org-src-fontify-natively t t)
+ '(org-src-fontify-natively t)
  '(ruby-deep-indent-paren nil)
  '(scss-compile-at-save nil)
  '(web-mode-code-indent-offset 2)
