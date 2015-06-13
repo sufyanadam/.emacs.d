@@ -54,6 +54,7 @@
 (depends-on "flycheck")
 (depends-on "fold-this")
 (depends-on "fringe-helper")
+(depends-on "geiser")
 (depends-on "gh")
 (depends-on "gist")
 (depends-on "git-commit-mode")

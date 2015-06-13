@@ -107,11 +107,23 @@
         ("s-O" . projectile-find-file)
         ))
 
+(use-package org-mode
+  :mode (("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+  :bind (
+         ("C-c l" . org-store-link)
+         ("C-c a" . org-agenda)
+         ("C-c b" . org-iswitchb)
+         )
+  :config
+  (progn
+    (setq org-agenda-files '("~/Dropbox/org"))))
+
 ;; Setup Ruby
 (use-package enh-ruby-mode
   :config
   (progn
     (add-hook 'enh-ruby-mode-hook 'rvm-activate-corresponding-ruby)
+    (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
     (setq rinari-tags-file-name "TAGS")
     (setq ruby-deep-indent-paren nil)
     (use-package rvm
@@ -137,7 +149,7 @@
          ("Gemfile$" . enh-ruby-mode)
          ("Capfile$" . enh-ruby-mode)
          ("Guardfile$" . enh-ruby-mode)
-         ("\\.rb\\$" . enh-ruby-mode))
+         ("\\.rb$" . enh-ruby-mode))
   :interpreter "ruby")
 
 (use-package web-mode
