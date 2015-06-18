@@ -92,6 +92,7 @@
 (depends-on "move-text")
 (depends-on "multifiles")
 (depends-on "multiple-cursors")
+(depends-on "naquadah-theme")
 (depends-on "nodejs-repl")
 (depends-on "nyan-mode")
 (depends-on "nyan-prompt")

@@ -13,3 +13,6 @@ async-bytecomp.log
 ido.last
 recentf
 smex-items
+org-clock-save.el
+tramp
+url
