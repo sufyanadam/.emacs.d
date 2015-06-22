@@ -19,7 +19,7 @@
                                      (if (region-active-p)
                                          (buffer-substring (region-beginning) (region-end))
                                        (read-string "Lookup word: " (current-word)))))))
-
+(bind-key "s-b" 'robe-jump)
 
 ;; different jumps for different visual modes
 (defadvice evil-visual-line (before spc-for-line-jump activate)
