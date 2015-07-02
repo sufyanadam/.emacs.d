@@ -349,7 +349,11 @@
   :config (flx-ido-mode 1))
 
 (use-package ido-vertical-mode
-  :config (ido-vertical-mode))
+  :config
+  (progn
+    (setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
+    (ido-vertical-mode)
+    ))
 
 ;; ido everywhere
 (use-package ido-ubiquitous
