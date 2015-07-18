@@ -42,6 +42,7 @@
 (depends-on "es-lib")
 (depends-on "es-windows")
 (depends-on "evil")
+(depends-on "evil-smartparens")
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")
 (depends-on "f")
