@@ -13,6 +13,10 @@
       (concat user-emacs-directory "users/" user-login-name))
 (add-to-list 'load-path user-settings-dir)
 
+
+;; ssh for tramp
+(setq tramp-default-method "ssh")
+
 ;; Setup packages
 (require 'setup-packages)
 
