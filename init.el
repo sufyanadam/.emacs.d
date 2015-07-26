@@ -122,6 +122,7 @@
   (progn
     (setq org-log-done 'time)
     (setq org-log-into-drawer t)
+    (setq org-use-sub-superscripts "{}")
     (setq org-log-state-notes-insert-after-drawers nil)
     (setq org-agenda-files '("~/Dropbox/org"))
     (setq org-todo-keywords
