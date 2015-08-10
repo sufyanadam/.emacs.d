@@ -1,9 +1,10 @@
 (bind-key "C-c C-c" 'comment-or-uncomment-current-line-or-region)
-(bind-key "C-c C-g" 'magit-status)
-(bind-key "C-c C-l" 'magit-file-log)
+(bind-key "<f12>" 'magit-status)
+(bind-key "C-c h" 'magit-log-buffer-file)
 
-(bind-key "M-[" 'er/expand-region)
-(bind-key "M-]" 'er/contract-region)
+(bind-key "M-j" 'er/expand-region)
+(bind-key "M-n" 'er/contract-region)
+
 (bind-key "<f5>" 'compile)
 (bind-key "C-c f" 'projectile-find-file)
 (bind-key "C-c C-t" 'projectile-toggle-between-implementation-and-test)
