@@ -17,6 +17,9 @@
 ;; ssh for tramp
 (setq tramp-default-method "ssh")
 
+;; Readable file sizes in dired
+(setq dired-listing-switches "-alh")
+
 ;; Setup packages
 (require 'setup-packages)
 
