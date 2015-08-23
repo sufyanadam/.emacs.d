@@ -125,6 +125,9 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
+;; Don't prompt to save modified buffers before compile
+(setq compilation-ask-about-save nil)
+
 ;; A saner ediff
 (setq ediff-diff-options "-w")
 (setq ediff-split-window-function 'split-window-horizontally)
