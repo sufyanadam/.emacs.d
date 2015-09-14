@@ -123,6 +123,9 @@
          )
   :init
   (progn
+    (use-package org-bullets)
+    (use-package org-tree-slide)
+    (add-hook 'org-mode-hook (λ () (org-bullets-mode 1)))
     (setq org-log-done 'time)
     (setq org-log-into-drawer t)
     (setq org-use-sub-superscripts "{}")
