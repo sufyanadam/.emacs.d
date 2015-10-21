@@ -209,6 +209,14 @@
     (setq org-clock-report-include-clocking-task t)
     ))
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (sh . t)
+   (python . t)
+   (ruby . t)
+   ))
+
 ;; Setup Ruby
 (use-package enh-ruby-mode
   :config
