@@ -99,17 +99,6 @@
     (bind-key "SPC" 'ace-jump-mode evil-normal-state-map))
     (bind-key "C-c SPC" 'ace-jump-mode))
 
-(use-package nyan-mode
-  :config
-  (progn
-    (setq nyan-wavy-trail t)
-    (nyan-mode)
-    (nyan-start-animation)))
-
-(use-package nyan-prompt
-  :config
-  (add-hook 'eshell-load-hook 'nyan-prompt-enable))
-
 ;; Setup inf-ruby
 (use-package inf-ruby
   :config
