@@ -99,7 +99,7 @@
   :init
   (progn
     (bind-key "SPC" 'ace-jump-mode evil-normal-state-map))
-    (bind-key "C-c SPC" 'ace-jump-mode))
+  (bind-key "C-c SPC" 'ace-jump-mode))
 
 ;; Setup inf-ruby
 (use-package inf-ruby
