@@ -119,6 +119,7 @@
 (depends-on "project-explorer")
 (depends-on "projectile")
 (depends-on "rainbow-mode")
+(depends-on "rbenv")
 (depends-on "restclient")
 (depends-on "rhtml-mode")
 (depends-on "rinari")
