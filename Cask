@@ -89,6 +89,7 @@
 (depends-on "jabber")
 (depends-on "js2-mode")
 (depends-on "js2-refactor")
+(depends-on "jsx-mode")
 (depends-on "jump")
 (depends-on "jump-char")
 (depends-on "logito")

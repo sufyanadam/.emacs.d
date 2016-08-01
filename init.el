@@ -255,6 +255,7 @@
             (use-package my-html-defuns)
             (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
             (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+            (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
             (add-hook 'web-mode-hook
                       (lambda ()
                         (setq web-mode-style-padding 2)
@@ -276,6 +277,15 @@
 
 (use-package css-mode
   :config (setq css-indent-offset 2))
+
+(use-package jsx-mode
+  :mode (("\\.jsx$" . jsx-mode)
+         ("\\.jsx$" . web-mode))
+  :config
+  (progn
+    (add-hook 'jsx-mode-hook (λ () setq jsx-indent-level 2))
+    )
+  )
 
 (use-package js2-mode
   :mode (("\\.js$" . js2-mode)
