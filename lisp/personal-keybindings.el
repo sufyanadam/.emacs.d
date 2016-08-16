@@ -21,6 +21,8 @@
                                          (buffer-substring (region-beginning) (region-end))
                                        (read-string "Lookup word: " (current-word)))))))
 
+(bind-key "C-c z" 'zoom-window-zoom)
+
 (bind-key "s-1" 'neotree-toggle)
 
 (bind-key "s-b" 'robe-jump)
