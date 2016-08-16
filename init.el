@@ -20,6 +20,9 @@
 ;; Readable file sizes in dired
 (setq dired-listing-switches "-alh")
 
+;; Neotree find current file and jump to node
+(setq neo-smart-open t)
+
 ;; Setup packages
 (require 'setup-packages)
 
@@ -88,6 +91,16 @@
 (use-package zoom-frm
   :config
   (when window-system (maximize-frame)))
+
+(use-package neotree
+  :config
+  (add-hook 'neotree-mode-hook
+  (λ ()
+     (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+     (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+     (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+     (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter))
+  ))
 
 ;; Represent undo-history as an actual tree (visualize with C-x u)
 (setq undo-tree-mode-lighter "")
