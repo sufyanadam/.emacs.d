@@ -7,6 +7,16 @@
   (httpd-start)
   (browse-url (concat "http://localhost:" (number-to-string port) "/")))
 
+(defun httpd-start-impatient (buffer-name)
+  "Start http server and navigate to impatient url"
+  (interactive)
+  (open-impatient-http-server-at (concat "imp/live/" buffer-name)))
+
+(defun open-impatient-http-server-at (path)
+  (setq httpd-root "~/")
+  (setq httpd-port 8017)
+  (httpd-start)
+  (browse-url (concat "http://localhost:" (number-to-string 8017) "/" (or path ""))))
 
 (defun view-url ()
   "Open a new buffer containing the contents of URL."

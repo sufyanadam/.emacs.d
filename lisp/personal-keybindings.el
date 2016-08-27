@@ -27,6 +27,17 @@
 
 (bind-key "s-b" 'robe-jump)
 
+;; Start live html prototyping
+(defun live-prototype (live-prototype-buffer-name)
+  "Create a new html buffer to prototype with"
+  (generate-new-buffer live-prototype-buffer-name)
+  (switch-to-buffer live-prototype-buffer-name)
+  (web-mode)
+  (impatient-mode)
+  (httpd-start-impatient live-prototype-buffer-name))
+
+(bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
+
 ;; different jumps for different visual modes
 (defadvice evil-visual-line (before spc-for-line-jump activate)
   (bind-key "SPC" 'evil-ace-jump-line-mode evil-motion-state-map))
