@@ -29,6 +29,8 @@
  '(org-src-fontify-natively t)
  '(ruby-deep-indent-paren nil)
  '(scss-compile-at-save nil)
+ '(web-mode-attr-indent-offset 2)
+ '(web-mode-attr-value-indent-offset 2)
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-enable-auto-closing t)
