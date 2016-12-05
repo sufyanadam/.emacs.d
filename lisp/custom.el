@@ -27,6 +27,9 @@
  '(org-hide-leading-stars t)
  '(org-pretty-entities t)
  '(org-src-fontify-natively t)
+ '(package-selected-packages
+   (quote
+    (markdown-mode zoom-window zoom-frm zenburn-theme yaml-mode window-numbering whitespace-cleanup-mode wgrep web-mode visual-regexp-steroids use-package tern-auto-complete tagedit sublime-themes spacegray-theme smooth-scrolling smex smart-forward slim-mode skewer-less simplezen scss-mode sass-mode rvm ruby-tools rspec-mode rsense robe rinari rhtml-mode restclient rbenv rainbow-mode projectile project-explorer pretty-symbols pdf-tools parse-csv paredit pallet org-tree-slide org-present org-plus-contrib org-bullets org-beautify-theme nyan-prompt nyan-mode nodejs-repl neotree naquadah-theme multifiles move-text monokai-theme magit jump-char jsx-mode js2-refactor jabber impatient-mode idomenu ido-vertical-mode ido-ubiquitous ido-at-point httprepl html-script-src highlight-indentation highlight-escape-sequences guide-key god-mode gitignore-mode gitconfig-mode git-messenger git-gutter-fringe gist geiser fold-this flycheck flx-ido find-file-in-project fill-column-indicator feature-mode fancy-narrow exec-path-from-shell evil-smartparens evil-mc ert-async eproject enh-ruby-mode emms elisp-slime-nav edbi dockerfile-mode direx demo-it dash-at-point csv-mode css-eldoc company-tern color-theme-sanityinc-tomorrow coffee-mode cider change-inner browse-kill-ring bash-completion babel-repl babel ample-zen-theme ample-theme ag afternoon-theme ace-jump-mode ac-slime ac-js2 ac-inf-ruby)))
  '(ruby-deep-indent-paren nil)
  '(scss-compile-at-save nil)
  '(web-mode-attr-indent-offset 2)

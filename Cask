@@ -95,6 +95,7 @@
 (depends-on "jump-char")
 (depends-on "logito")
 (depends-on "magit")
+(depends-on "markdown-mode")
 (depends-on "monokai-theme")
 (depends-on "move-text")
 (depends-on "multifiles")
