@@ -38,6 +38,10 @@
 
 (bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
 
+(require 'evil)
+(bind-key "S-<up>" 'move-text-up evil-motion-state-map)
+(bind-key "S-<down>" 'move-text-down evil-motion-state-map)
+
 ;; different jumps for different visual modes
 (defadvice evil-visual-line (before spc-for-line-jump activate)
   (bind-key "SPC" 'evil-ace-jump-line-mode evil-motion-state-map))
