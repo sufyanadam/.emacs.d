@@ -39,6 +39,9 @@
 ;; No Problemo
 (bind-key "C-c n p" (Λ (play-sound "no-problemo.mp3")))
 
+;; Affirmative
+(bind-key "C-c y" (Λ (play-sound "t3_affirmative.wav")))
+
 (bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
 
 (require 'evil)
