@@ -42,6 +42,9 @@
 ;; Affirmative
 (bind-key "C-c y" (Λ (play-sound "t3_affirmative.wav")))
 
+;; Negative
+(bind-key "C-c -" (Λ (play-sound "negative.mp3")))
+
 (bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
 
 (require 'evil)
