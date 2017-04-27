@@ -36,6 +36,9 @@
   (impatient-mode)
   (httpd-start-impatient live-prototype-buffer-name))
 
+;; No Problemo
+(bind-key "C-c n p" (Λ (play-sound "no-problemo.mp3")))
+
 (bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
 
 (require 'evil)
