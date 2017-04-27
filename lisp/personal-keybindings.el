@@ -50,6 +50,9 @@
 ;; Let's do it
 (bind-key "C-c !" (Λ (sa-play-sound "lets-do-it.mp3")))
 
+;; Nice to meet u
+(bind-key "C-c n m" (Λ (sa-play-sound "nice-to-meet-u.mp3")))
+
 (require 'evil)
 (bind-key "S-<up>" 'move-text-up evil-motion-state-map)
 (bind-key "S-<down>" 'move-text-down evil-motion-state-map)
