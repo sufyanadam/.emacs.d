@@ -36,6 +36,8 @@
   (impatient-mode)
   (httpd-start-impatient live-prototype-buffer-name))
 
+(bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
+
 ;; No Problemo
 (bind-key "C-c n p" (Λ (play-sound "no-problemo.mp3")))
 
@@ -45,7 +47,8 @@
 ;; Negative
 (bind-key "C-c -" (Λ (play-sound "negative.mp3")))
 
-(bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
+;; Let's do it
+(bind-key "C-c !" (Λ (play-sound "lets-do-it.mp3")))
 
 (require 'evil)
 (bind-key "S-<up>" 'move-text-up evil-motion-state-map)
