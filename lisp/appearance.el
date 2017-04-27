@@ -7,7 +7,6 @@
 ;(set-default-font "Anonymice Powerline-18")
 ;(add-to-list 'default-frame-alist '(font . "Anonymice Powerline-18"))
 
-
 (setq
  font-lock-maximum-decoration t
  color-theme-is-global t

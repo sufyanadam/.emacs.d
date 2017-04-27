@@ -7,6 +7,8 @@
 
 (defconst emacs-start-time (current-time))
 
+(setq-default indent-tabs-mode nil)
+
 ;; Setup load path
 (setq config-dir (expand-file-name "lisp" user-emacs-directory))
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
