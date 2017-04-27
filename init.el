@@ -94,6 +94,7 @@
 (use-package lisp-defuns)
 (use-package config-options)
 (use-package personal-keybindings)
+(use-package fun-defuns)
 
 ;; Packages
 (use-package evil
@@ -549,7 +550,13 @@
   :config
   (progn
     (emms-all)
-    (emms-default-players)))
+    (require 'play-sound)
+    (define-emms-simple-player afplay '(file)
+      (regexp-opt '(".mp3" ".m4a" ".aac"))
+      "afplay")
+    (setq emms-player-list `(,emms-player-afplay))
+    (emms-default-players)
+    ))
 
 ;; quicklisp
 (if (file-exists-p
