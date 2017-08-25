@@ -410,7 +410,7 @@
     ))
 
 ;; ido everywhere
-(use-package ido-ubiquitous
+(use-package ido-completing-read+ 
   :config (ido-ubiquitous-mode 1))
 
 (use-package ido-at-point

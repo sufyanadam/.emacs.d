@@ -81,7 +81,7 @@
 (depends-on "htmlize")
 (depends-on "httprepl")
 (depends-on "ido-at-point")
-(depends-on "ido-ubiquitous")
+(depends-on "ido-completing-read+")
 (depends-on "ido-vertical-mode")
 (depends-on "idomenu")
 (depends-on "impatient-mode")
