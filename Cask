@@ -36,6 +36,7 @@
 (depends-on "diminish")
 (depends-on "direx")
 (depends-on "dockerfile-mode")
+(depends-on "dumb-jump")
 (depends-on "edbi")
 (depends-on "elisp-slime-nav")
 (depends-on "emms")
