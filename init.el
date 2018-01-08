@@ -242,9 +242,6 @@
    (ruby . t)
    ))
 
-;; Dump jump mode
-(use-package dumb-jump-mode)
-
 ;; Setup Ruby
 (use-package enh-ruby-mode
   :config
@@ -357,6 +354,9 @@
 (use-package ag)
 (use-package git-gutter)
 (use-package git-gutter-fringe)
+
+;; Dump jump mode
+(use-package dumb-jump)
 
 (use-package eshell
   :config
