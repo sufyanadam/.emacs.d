@@ -96,11 +96,6 @@
 (use-package personal-keybindings)
 (use-package fun-defuns)
 
-;; Packages
-(use-package evil
-  :config
-  (evil-mode))
-
 (use-package zoom-frm
   :config
   (when window-system (maximize-frame)))
@@ -570,6 +565,11 @@
         :init
         (setq inferior-lisp-program "/usr/local/bin/sbcl"))))
 
+
+;; Packages
+(use-package evil
+  :config
+  (evil-mode))
 
 (let ((elapsed (float-time (time-subtract (current-time)
 					  emacs-start-time))))
