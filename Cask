@@ -164,5 +164,5 @@
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
 (depends-on "zenburn-theme")
-(depends-on "zoom-frm")
+;; (depends-on "zoom-frm")  This is no longer available
 (depends-on "zoom-window")

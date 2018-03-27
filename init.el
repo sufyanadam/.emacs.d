@@ -96,9 +96,9 @@
 (use-package personal-keybindings)
 (use-package fun-defuns)
 
-(use-package zoom-frm
-  :config
-  (when window-system (maximize-frame)))
+;; (use-package zoom-frm
+;;   :config
+;;   (when window-system (maximize-frame)))
 
 (use-package neotree
   :config
