@@ -276,7 +276,9 @@
             (use-package my-html-defuns)
             (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
             (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-            (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+            (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
+            (setq web-mode-content-types-alist
+                  '(("jsx"  . "\\.js[x]?\\'")))
             (add-hook 'web-mode-hook
                       (lambda ()
                         (setq web-mode-style-padding 2)
@@ -298,23 +300,6 @@
 
 (use-package css-mode
   :config (setq css-indent-offset 2))
-
-(use-package jsx-mode
-  :mode (("\\.jsx$" . jsx-mode)
-         ("\\.jsx$" . web-mode))
-  :config
-  (progn
-    (add-hook 'jsx-mode-hook (λ () setq jsx-indent-level 2))
-    )
-  )
-
-(use-package js2-mode
-  :mode (("\\.js$" . js2-mode)
-         ("Jakefile$" . js2-mode))
-  :interpreter ("node" . js2-mode)
-  :config
-  (progn
-    (add-hook 'js2-mode-hook (λ () (setq js2-basic-offset 2)))))
 
 (use-package coffee-mode
   :mode (("\\.coffee$" . coffee-mode)
