@@ -53,6 +53,12 @@
 ;; Nice to meet u
 (bind-key "C-c n m" (Λ (sa-play-sound "nice-to-meet-u.mp3")))
 
+;; I've been waiting for you
+(bind-key "C-c w" (Λ (sa-play-sound "ive-been-waiting-for-you.ogg")))
+
+;; those files have been erased
+;;
+
 (require 'evil)
 (bind-key "S-<up>" 'move-text-up evil-motion-state-map)
 (bind-key "S-<down>" 'move-text-down evil-motion-state-map)
