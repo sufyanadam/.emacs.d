@@ -57,7 +57,7 @@
 (bind-key "C-c w" (Λ (sa-play-sound "ive-been-waiting-for-you.ogg")))
 
 ;; those files have been erased
-;;
+(bind-key "C-c <backspace>" (Λ (sa-play-sound "those-files-have-been-erased.ogg")))
 
 (require 'evil)
 (bind-key "S-<up>" 'move-text-up evil-motion-state-map)
