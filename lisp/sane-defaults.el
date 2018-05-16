@@ -78,7 +78,7 @@
 ;; Always display line and column numbers
 (setq line-number-mode t)
 (setq column-number-mode t)
-(setq global-linum-mode 1)
+;; (setq global-linum-mode 1)
 
 ;; Lines should be 80 characters wide, not 72
 (setq fill-column 80)
