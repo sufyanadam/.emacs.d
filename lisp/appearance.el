@@ -1,8 +1,12 @@
 (load-theme 'zenburn :no-confirm)
 
 ;; Coding font
-(set-default-font "Hack-18")
-(add-to-list 'default-frame-alist '(font . "Hack-18"))
+(setq current-font-size 18)
+(defun current-font ()
+  (format "Hack-%d" current-font-size)
+  )
+(set-default-font (current-font))
+(add-to-list 'default-frame-alist `(font . ,(current-font)))
 
 ;(set-default-font "Anonymice Powerline-18")
 ;(add-to-list 'default-frame-alist '(font . "Anonymice Powerline-18"))

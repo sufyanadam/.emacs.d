@@ -36,6 +36,20 @@
   (impatient-mode)
   (httpd-start-impatient live-prototype-buffer-name))
 
+(defun increase-font-size ()
+  (setq current-font-size (+ current-font-size 1))
+  (set-default-font (format "Hack-%d" current-font-size))
+  )
+
+(bind-key "s-=" (Λ (increase-font-size)))
+
+(defun decrease-font-size ()
+  (setq current-font-size (- current-font-size 1))
+  (set-default-font (format "Hack-%d" current-font-size))
+  )
+
+(bind-key "s--" (Λ (decrease-font-size)))
+
 (bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
 
 ;; No Problemo
