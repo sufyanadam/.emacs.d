@@ -104,8 +104,6 @@
 (depends-on "naquadah-theme")
 (depends-on "neotree")
 (depends-on "nodejs-repl")
-(depends-on "nyan-mode")
-(depends-on "nyan-prompt")
 (depends-on "org-beautify-theme")
 (depends-on "org-bullets")
 (depends-on "org-plus-contrib")
