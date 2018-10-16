@@ -95,6 +95,7 @@
 (depends-on "jump")
 (depends-on "jump-char")
 (depends-on "logito")
+(depends-on "lua-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "monokai-theme")
@@ -162,5 +163,4 @@
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
 (depends-on "zenburn-theme")
-;; (depends-on "zoom-frm")  This is no longer available
 (depends-on "zoom-window")
