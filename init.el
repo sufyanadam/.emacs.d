@@ -134,6 +134,8 @@
         ("s-O" . projectile-find-file)
         ))
 
+;; Org mode
+
 (use-package org-mode
   :mode (("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
   :bind (
