@@ -24,6 +24,7 @@
  '(js2-missing-semi-one-line-override t)
  '(js2-strict-missing-semi-warning nil)
  '(lua-indent-level 2)
+ '(lua-indent-string-contents t)
  '(org-fontify-done-headline t)
  '(org-fontify-whole-heading-line t)
  '(org-hide-emphasis-markers t)
