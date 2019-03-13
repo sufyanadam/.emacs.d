@@ -237,6 +237,7 @@
    (shell . t)
    (python . t)
    (ruby . t)
+   (js . t)
    ))
 
 ;; Setup Ruby
