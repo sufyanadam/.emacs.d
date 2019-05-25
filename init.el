@@ -229,6 +229,9 @@
     (setq org-clock-persist-query-resume nil)
     (setq org-clock-auto-clock-resolution 'when-no-clock-is-running)
     (setq org-clock-report-include-clocking-task t)
+
+    ;; Babel settings
+    (setq org-src-preserve-indentation t)
     ))
 
 (org-babel-do-load-languages
