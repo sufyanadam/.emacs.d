@@ -156,6 +156,7 @@
 (depends-on "tagedit")
 (depends-on "tern")
 (depends-on "tern-auto-complete")
+(depends-on "terraform-mode")
 (depends-on "undo-tree")
 (depends-on "use-package")
 (depends-on "visual-regexp")
