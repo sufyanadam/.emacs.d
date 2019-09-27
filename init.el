@@ -145,6 +145,7 @@
          )
   :init
   (progn
+    (use-package org-tempo)
     (use-package org-bullets)
     (use-package org-tree-slide)
     (add-hook 'org-mode-hook (λ () (org-bullets-mode 1)))
