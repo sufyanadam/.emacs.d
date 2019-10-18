@@ -284,8 +284,11 @@
             (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
             (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
             (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
+            (add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
+            (add-to-list 'auto-mode-alist '("\\.ts?\\'" . web-mode))
             (setq web-mode-content-types-alist
-                  '(("jsx"  . "\\.js[x]?\\'")))
+                  '(("jsx"  . "\\.js[x]?\\'"))
+                  )
             (add-hook 'web-mode-hook
                       (lambda ()
                         (setq web-mode-style-padding 2)
