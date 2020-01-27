@@ -577,3 +577,9 @@
 	       (message "Loading %s...done (%.3fs) [after-init]"
 			,load-file-name elapsed)))
 	  t)
+
+
+(use-package emojify
+  :config
+  (global-emojify-mode)
+  )

@@ -41,6 +41,7 @@
 (depends-on "edit-indirect")
 (depends-on "elisp-slime-nav")
 (depends-on "emms")
+(depends-on "emojify")
 (depends-on "enh-ruby-mode")
 (depends-on "epc")
 (depends-on "epl")
