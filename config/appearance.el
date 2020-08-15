@@ -5,7 +5,7 @@
 (defun current-font ()
   (format "Hack-%d" current-font-size)
   )
-;(set-default-font (current-font))
+
 (add-to-list 'default-frame-alist `(font . ,(current-font)))
 
 ;(set-default-font "Anonymice Powerline-18")

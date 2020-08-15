@@ -4,8 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("97fd71cc2c7fb988234877248967b60a92424335f41b3a2469df782d38216f54" "9558f71c706fba7b136e75d9c5e73ddd2c9d91e76e2b18f733d4ab2f388f3b72" "f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "2b5aa66b7d5be41b18cc67f3286ae664134b95ccc4a86c9339c886dfd736132d" "7fbb8d064286706fb1e319c9d3c0a8eafc2efe6b19380aae9734c228b05350ae" default)))
+   '("97fd71cc2c7fb988234877248967b60a92424335f41b3a2469df782d38216f54" "9558f71c706fba7b136e75d9c5e73ddd2c9d91e76e2b18f733d4ab2f388f3b72" "f0ea6118d1414b24c2e4babdc8e252707727e7b4ff2e791129f240a2b3093e32" "3b819bba57a676edf6e4881bd38c777f96d1aa3b3b5bc21d8266fa5b0d0f1ebf" "2b5aa66b7d5be41b18cc67f3286ae664134b95ccc4a86c9339c886dfd736132d" "7fbb8d064286706fb1e319c9d3c0a8eafc2efe6b19380aae9734c228b05350ae" default))
  '(enh-ruby-bounce-deep-indent nil)
  '(enh-ruby-deep-arglist nil)
  '(enh-ruby-deep-indent-paren nil)
@@ -25,8 +24,8 @@
  '(js2-strict-missing-semi-warning nil)
  '(lua-indent-level 2)
  '(lua-indent-string-contents t)
- '(org-agenda-files (quote ("~/stessa-notes.org" "~/Dropbox/org")))
- '(org-export-backends (quote (ascii html icalendar latex md odt)))
+ '(org-agenda-files '("~/stessa-notes.org" "~/Dropbox/org"))
+ '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-fontify-done-headline t)
  '(org-fontify-whole-heading-line t)
  '(org-hide-emphasis-markers t)
@@ -34,8 +33,7 @@
  '(org-pretty-entities t)
  '(org-src-fontify-natively t)
  '(package-selected-packages
-   (quote
-    (emojify lsp-vue typescript-mode vue-mode terraform-mode pandoc edit-indirect html-to-markdown markdown-preview-mode lua-mode dumb-jump markdown-mode zoom-window zoom-frm zenburn-theme yaml-mode window-numbering whitespace-cleanup-mode wgrep web-mode visual-regexp-steroids use-package tern-auto-complete tagedit sublime-themes spacegray-theme smooth-scrolling smex smart-forward slim-mode skewer-less simplezen scss-mode sass-mode rvm ruby-tools rspec-mode rsense robe rinari rhtml-mode restclient rbenv rainbow-mode projectile project-explorer pretty-symbols pdf-tools parse-csv paredit pallet org-tree-slide org-present org-plus-contrib org-bullets org-beautify-theme nodejs-repl neotree naquadah-theme multifiles move-text monokai-theme magit jump-char jsx-mode js2-refactor jabber impatient-mode idomenu ido-vertical-mode ido-ubiquitous ido-at-point httprepl html-script-src highlight-indentation highlight-escape-sequences guide-key god-mode gitignore-mode gitconfig-mode git-messenger git-gutter-fringe gist geiser fold-this flycheck flx-ido find-file-in-project fill-column-indicator feature-mode fancy-narrow exec-path-from-shell evil-smartparens evil-mc ert-async eproject enh-ruby-mode emms elisp-slime-nav edbi dockerfile-mode direx demo-it dash-at-point csv-mode css-eldoc company-tern color-theme-sanityinc-tomorrow coffee-mode cider change-inner browse-kill-ring bash-completion babel-repl babel ample-zen-theme ample-theme ag afternoon-theme ace-jump-mode ac-slime ac-js2 ac-inf-ruby)))
+   '(ido-completing-read+ exwm exwm-edit exwm-firefox-core exwm-firefox-evil exwm-mff exwm-surf exwm-x wallpaper zoom emojify lsp-vue typescript-mode vue-mode terraform-mode pandoc edit-indirect html-to-markdown markdown-preview-mode lua-mode dumb-jump markdown-mode zoom-window zoom-frm zenburn-theme yaml-mode window-numbering whitespace-cleanup-mode wgrep web-mode visual-regexp-steroids use-package tern-auto-complete tagedit sublime-themes spacegray-theme smooth-scrolling smex smart-forward slim-mode skewer-less simplezen scss-mode sass-mode rvm ruby-tools rspec-mode rsense robe rinari rhtml-mode restclient rbenv rainbow-mode projectile project-explorer pretty-symbols pdf-tools parse-csv paredit pallet org-tree-slide org-present org-plus-contrib org-bullets org-beautify-theme nodejs-repl neotree naquadah-theme multifiles move-text monokai-theme magit jump-char jsx-mode js2-refactor jabber impatient-mode idomenu ido-vertical-mode ido-ubiquitous ido-at-point httprepl html-script-src highlight-indentation highlight-escape-sequences guide-key god-mode gitignore-mode gitconfig-mode git-messenger git-gutter-fringe gist geiser fold-this flycheck flx-ido find-file-in-project fill-column-indicator feature-mode fancy-narrow exec-path-from-shell evil-smartparens evil-mc ert-async eproject enh-ruby-mode emms elisp-slime-nav edbi dockerfile-mode direx demo-it dash-at-point csv-mode css-eldoc company-tern color-theme-sanityinc-tomorrow coffee-mode cider change-inner browse-kill-ring bash-completion babel-repl babel ample-zen-theme ample-theme ag afternoon-theme ace-jump-mode ac-slime ac-js2 ac-inf-ruby))
  '(ruby-deep-indent-paren nil)
  '(scss-compile-at-save nil)
  '(sh-basic-offset 2)
