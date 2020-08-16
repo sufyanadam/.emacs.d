@@ -14,6 +14,7 @@
 
 (add-to-list 'load-path quicklisp-dir)
 (add-to-list 'load-path (expand-file-name config-dir user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "emacs-wiki-packages/zoom-frm" user-emacs-directory))
 
 ;; Setup packages
 (require 'setup-packages)
@@ -46,11 +47,13 @@
 (use-package fun-defuns)
 
 ;;Setup shell
-(use-package shell)
+(use-package shell-settings)
 
-;; (use-package zoom-frm
-;;   :config
-;;   (when window-system (maximize-frame)))
+(use-package zoom-frm
+  :config
+  (when window-system (maximize-frame)))
+
+(use-package zoom-in-out)
 
 ;; Org mode config
 (use-package org-config)
