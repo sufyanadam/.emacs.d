@@ -14,6 +14,8 @@
     (add-hook 'org-mode-hook (λ () (org-bullets-mode 1)))
     (setq org-log-done 'time)
     (setq org-log-into-drawer t)
+    (setq org-html-doctype "html5")
+    (setq org-html-html5-fancy t)
     (setq org-use-sub-superscripts "{}")
     (setq org-log-state-notes-insert-after-drawers nil)
     (setq org-agenda-files '("~/Dropbox/org"))
