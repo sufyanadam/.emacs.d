@@ -403,20 +403,16 @@
     (emms-default-players)
     ))
 
-;; quicklisp
-(if (file-exists-p
-     (expand-file-name "slime-helper.el" quicklisp-dir))
-    (progn
-      (use-package slime-helper
-        :commands slime
-        :init
-        (setq inferior-lisp-program "/usr/local/bin/sbcl"))))
-
+(setq inferior-lisp-program "sbcl")
 
 ;; Packages
 (use-package evil
   :config
   (evil-mode))
+
+(use-package slime
+  :config
+  (slime-setup '(slime-fancy)))
 
 (use-package emojify
   :config
