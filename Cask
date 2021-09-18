@@ -162,6 +162,7 @@
 (depends-on "smooth-scrolling")
 (depends-on "spacegray-theme")
 (depends-on "sublime-themes")
+(depends-on "swift3-mode")
 (depends-on "tagedit")
 (depends-on "tern")
 (depends-on "tern-auto-complete")
