@@ -38,6 +38,7 @@
  '(scss-compile-at-save nil)
  '(sh-basic-offset 2)
  '(sh-indentation 2)
+ '(swift-mode:basic-offset 2)
  '(swift3-mode:basic-offset 2)
  '(tab-width 2)
  '(web-mode-attr-indent-offset 2)
