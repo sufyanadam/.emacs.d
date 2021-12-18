@@ -1,5 +1,7 @@
 (defun auto-cask/find-homebrew-cask-el ()
-  (let ((prefix "/usr/local/Cellar/cask"))
+  (let ((prefix
+         (car (seq-filter (lambda (directory) (file-exists-p directory)) ["/usr/local/Cellar/cask" "/opt/homebrew/Cellar/cask"]))
+         ))
     (when (file-exists-p prefix)
 					; This will break if cask changes version numbering
       (let ((files (directory-files prefix nil "[0-9]+\\.[0-9]+\\.[0-9]+")))
