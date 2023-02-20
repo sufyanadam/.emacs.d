@@ -136,6 +136,8 @@
             (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
             (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
             (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
+            (add-to-list 'auto-mode-alist '("\\.ts[x]?\\'" . typescript-mode))
+            (add-to-list 'auto-mode-alist '("\\.mjs?\\'" . js2-mode))
             (add-to-list 'auto-mode-alist '("\\.vue?\\'" . web-mode))
             (add-to-list 'auto-mode-alist '("\\.ts?\\'" . web-mode))
             (setq web-mode-content-types-alist
