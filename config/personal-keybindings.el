@@ -52,6 +52,8 @@
 
 (bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
 
+(bind-key "s-\\" 'gptel)
+
 ;; No Problemo
 (bind-key "C-c n p" (Λ (sa-play-sound "no-problemo.mp3")))
 

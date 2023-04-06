@@ -85,6 +85,7 @@
 (depends-on "git-messenger")
 (depends-on "god-mode")
 (depends-on "goto-chg")
+(depends-on "gptel")
 (depends-on "grizzl" "0.1.0")
 (depends-on "guide-key")
 (depends-on "haml-mode")

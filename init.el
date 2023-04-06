@@ -96,6 +96,12 @@
         ("s-O" . projectile-find-file)
         ))
 
+;; GPT
+(use-package gptel
+  :init
+  (setq gptel-api-key (getenv "OPENAI_API_KEY"))
+  )
+
 ;; Setup Ruby
 (use-package enh-ruby-mode
   :config
