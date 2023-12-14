@@ -22,4 +22,5 @@ transient/
 emojis
 games
 newsticker
-
+.cache
+eln-cache
