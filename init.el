@@ -16,6 +16,10 @@
 (add-to-list 'load-path (expand-file-name config-dir user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "emacs-wiki-packages/zoom-frm" user-emacs-directory))
 
+;; Suppress warnings
+(setq native-comp-async-report-warnings-errors 'silent)
+(setq warning-minimum-level :error)
+
 ;; Setup packages
 (require 'setup-packages)
 
