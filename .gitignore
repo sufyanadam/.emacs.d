@@ -25,3 +25,5 @@ newsticker
 .cache
 eln-cache
 *~undo-tree~
+.caskbackups
+.caskorg*

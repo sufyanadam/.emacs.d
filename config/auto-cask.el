@@ -20,6 +20,6 @@
     (when cask-el
       (progn
 	(require 'cask cask-el)
-	(cask-initialize)))))
+	(cask--initialize)))))
 
 (provide 'auto-cask)
