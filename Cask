@@ -17,6 +17,7 @@
 (depends-on "babel")
 (depends-on "babel-repl")
 (depends-on "bash-completion")
+(depends-on "blamer")
 (depends-on "bind-key")
 (depends-on "browse-kill-ring")
 (depends-on "change-inner")
