@@ -211,6 +211,13 @@
   (setq gptel-api-key (getenv "OPENAI_API_KEY"))
   )
 
+(use-package prettier-js-mode
+  :mode (
+         ("\\.jsx?$" . prettier-js-mode)
+         ("\\.tsx?$" . prettier-js-mode)
+         )
+  )
+
 ;; Setup Ruby
 (use-package enh-ruby-mode
   :config

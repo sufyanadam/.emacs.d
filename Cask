@@ -150,6 +150,7 @@
 (depends-on "popup")
 (depends-on "popwin")
 (depends-on "pretty-symbols")
+(depends-on "prettier-js-mode")
 (depends-on "project")
 (depends-on "project-explorer")
 (depends-on "projectile")
