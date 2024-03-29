@@ -4,7 +4,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(connection-local-criteria-alist
-   '(((:application tramp :protocol "flatpak")
+   '(((:application tramp :machine "sufyans-MBP.lan")
+      tramp-connection-local-darwin-ps-profile)
+     ((:application tramp :protocol "flatpak")
       tramp-flatpak-connection-local-default-profile)
      ((:application tramp :protocol "kubernetes")
       tramp-kubernetes-connection-local-default-profile)
@@ -174,10 +176,10 @@
                  simplezen skewer-less slim-mode slime-repl-ansi-color
                  smart-forward smex smooth-scrolling spacegray-theme
                  sublime-themes swift-mode tagedit tern-auto-complete
-                 terraform-mode treemacs treemacs-evil
-                 treemacs-icons-dired treemacs-magit treemacs-persp
-                 treemacs-projectile treemacs-tab-bar ts
-                 typescript-mode use-package visual-regexp-steroids
+                 terraform-mode tide tree-sitter treemacs
+                 treemacs-evil treemacs-icons-dired treemacs-magit
+                 treemacs-persp treemacs-projectile treemacs-tab-bar
+                 ts typescript-mode use-package visual-regexp-steroids
                  vue-mode wallpaper web-mode wgrep
                  whitespace-cleanup-mode window-numbering yaml-mode
                  zenburn-theme zoom zoom-frm zoom-window))

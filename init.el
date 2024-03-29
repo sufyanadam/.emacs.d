@@ -35,6 +35,9 @@
 ;; Set default directory to home
 (setq default-directory (f-full (getenv "HOME")))
 
+;; Prevent undo tree files from polluting your git repo
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+
 ;; Setup keyboard
 (use-package keyboard-config)
 
@@ -560,6 +563,14 @@
                     :italic t)))
   :config
   (global-blamer-mode 1))
+
+;; TIDE mode for typescript
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
 
 ;; Settings for currently logged in user
 (setq user-settings-dir
