@@ -212,7 +212,12 @@
 ;; GPT
 (use-package gptel
   :init
-  (setq gptel-api-key (getenv "OPENAI_API_KEY"))
+  ;(setq gptel-api-key (getenv "OPENAI_API_KEY"))      Use gemini instead
+  (setq
+   gptel-model "gemini-pro"
+   gptel-backend (gptel-make-gemini "Gemini"
+                   :key (getenv "GEMINI_API_KEY")
+                   :stream t))
   )
 
 (use-package prettier-js-mode
