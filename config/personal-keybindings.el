@@ -53,27 +53,26 @@
 (bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
 
 (bind-key "s-\\" 'gptel)
-
 ;; No Problemo
-(bind-key "C-c n p" (Λ (sa-play-sound "no-problemo.mp3")))
+(bind-key "C-c n p" (Λ (sa-play-sound (file-name-concat sounds-dir "no-problemo.mp3"))))
 
 ;; Affirmative
-(bind-key "C-c y" (Λ (sa-play-sound "t3_affirmative.wav")))
+(bind-key "C-c y" (Λ (sa-play-sound (file-name-concat sounds-dir "t3_affirmative.wav"))))
 
 ;; Negative
-(bind-key "C-c -" (Λ (sa-play-sound "negative.mp3")))
+(bind-key "C-c -" (Λ (sa-play-sound (file-name-concat sounds-dir "negative.mp3"))))
 
 ;; Let's do it
-(bind-key "C-c !" (Λ (sa-play-sound "lets-do-it.mp3")))
+(bind-key "C-c !" (Λ (sa-play-sound (file-name-concat sounds-dir "lets-do-it.mp3"))))
 
 ;; Nice to meet u
-(bind-key "C-c n m" (Λ (sa-play-sound "nice-to-meet-u.mp3")))
+(bind-key "C-c n m" (Λ (sa-play-sound (file-name-concat sounds-dir "nice-to-meet-u.mp3"))))
 
 ;; I've been waiting for you
-(bind-key "C-c w" (Λ (sa-play-sound "ive-been-waiting-for-you.ogg")))
+(bind-key "C-c w" (Λ (sa-play-sound (file-name-concat sounds-dir "ive-been-waiting-for-you.ogg"))))
 
 ;; those files have been erased
-(bind-key "C-c <backspace>" (Λ (sa-play-sound "those-files-have-been-erased.ogg")))
+(bind-key "C-c <backspace>" (Λ (sa-play-sound (file-name-concat sounds-dir "those-files-have-been-erased.ogg"))))
 
 (require 'evil)
 (bind-key "S-<up>" 'move-text-up evil-motion-state-map)

@@ -11,6 +11,7 @@
 ;; Setup load path
 (setq quicklisp-dir "~/quicklisp")
 (setq config-dir (expand-file-name (symbol-name 'config) user-emacs-directory))
+(setq sounds-dir (expand-file-name (symbol-name 'sounds) user-emacs-directory))
 
 (add-to-list 'load-path quicklisp-dir)
 (add-to-list 'load-path (expand-file-name config-dir user-emacs-directory))
