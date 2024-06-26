@@ -50,7 +50,8 @@
 
 (bind-key "s--" (Λ (decrease-font-size)))
 
-(bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
+;(bind-key "s-<return>" (Λ (live-prototype (concat (read-string "Prototype buffer name: " "prototype")))))
+(bind-key "s-<return>" (Λ (browse-url-at-point)))
 
 (bind-key "s-\\" 'gptel)
 ;; No Problemo
