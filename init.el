@@ -227,6 +227,12 @@
          )
   )
 
+;; Setup LSP
+(use-package lsp-mode
+  :config
+  (progn
+    (setq lsp-apply-edits-after-file-operations nil)))
+
 ;; Setup Ruby
 (use-package enh-ruby-mode
   :config
