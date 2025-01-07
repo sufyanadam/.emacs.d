@@ -235,7 +235,6 @@
 
 ;; Setup Elixir
 (use-package elixir-mode
-  :ensure t
   :config
   (progn
     (add-hook 'elixir-mode-hook 'exunit-mode)
