@@ -233,6 +233,16 @@
   (progn
     (setq lsp-apply-edits-after-file-operations nil)))
 
+;; Setup Elixir
+(use-package elixir-mode
+  :ensure t
+  :config
+  (progn
+    (add-hook 'elixir-mode-hook 'exunit-mode)
+    (add-to-list 'auto-mode-alist '("\\.elixir2\\'" . elixir-mode))
+    )
+  )
+
 ;; Setup Ruby
 (use-package enh-ruby-mode
   :config
