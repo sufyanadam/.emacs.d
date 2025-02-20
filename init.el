@@ -237,6 +237,7 @@
 (use-package elixir-mode
   :config
   (progn
+    (add-hook 'elixir-mode-hook 'lsp)
     (add-hook 'elixir-mode-hook 'exunit-mode)
     (add-to-list 'auto-mode-alist '("\\.elixir2\\'" . elixir-mode))
     )
