@@ -107,6 +107,7 @@
    (python . t)
    (ruby . t)
    (js . t)
+   (elixir . t)
    ))
 
 (provide 'org-config)
