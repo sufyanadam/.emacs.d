@@ -1,4 +1,7 @@
-(load-theme 'zenburn :no-confirm)
+(use-package zenburn-theme
+  :ensure t
+  :config
+  (load-theme 'zenburn t))
 
 ;; Coding font
 (setq current-font-size 18)

@@ -191,7 +191,6 @@
 (depends-on "ts")
 (depends-on "typescript-mode")
 (depends-on "undo-tree")
-(depends-on "use-package")
 (depends-on "visual-regexp")
 (depends-on "visual-regexp-steroids")
 (depends-on "wallpaper")

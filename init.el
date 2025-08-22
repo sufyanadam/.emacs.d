@@ -601,6 +601,12 @@
 
 (use-package welcome)
 
+(use-package claude-code-ide
+   :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
+   :bind ("C-c C-'" . claude-code-ide-menu) ; Set your favorite keybinding
+   :config
+   (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
+
 ;; Show how long it took to load config
 (let ((elapsed (float-time (time-subtract (current-time)
 					  emacs-start-time))))
