@@ -601,6 +601,11 @@
 
 (use-package welcome)
 
+(use-package copilot
+  :vc (:url "https://github.com/copilot-emacs/copilot.el"
+            :rev :newest
+            :branch "main"))
+
 (use-package claude-code-ide
    :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
    :bind ("C-c C-'" . claude-code-ide-menu) ; Set your favorite keybinding
