@@ -604,7 +604,15 @@
 (use-package copilot
   :vc (:url "https://github.com/copilot-emacs/copilot.el"
             :rev :newest
-            :branch "main"))
+            :branch "main")
+  :config
+  (progn
+    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+    (copilot-mode 1)
+    (global-copilot-mode 1)
+    )
+  )
 
 (use-package claude-code-ide
    :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
