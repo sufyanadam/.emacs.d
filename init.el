@@ -237,7 +237,14 @@
 (use-package elixir-mode
   :ensure t
   :custom
-  (lsp-elixir-server-command '("expert_linux_amd64"))) ;ensure this is in your PATH https://github.com/elixir-lang/expert/blob/main/pages/installation.md
+  (lsp-elixir-server-command '("expert_linux_amd64")) ;ensure this is in your PATH https://github.com/elixir-lang/expert/blob/main/pages/installation.md
+  :config
+  (progn
+    (add-hook 'elixir-mode-hook 'lsp)
+    (add-hook 'elixir-mode-hook 'exunit-mode)
+    (add-to-list 'auto-mode-alist '("\\.elixir2\\'" . elixir-mode))
+    )
+  )
 
 ;(use-package elixir-mode
 ;  :config
