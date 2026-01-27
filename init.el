@@ -202,6 +202,15 @@
   :config
   (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
+
+;; Python lsp
+(use-package lsp-pyright
+  :ensure t
+  :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
+  :hook (python-mode . (λ () (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
+
+
 ;; Projectile everywhere
 (use-package projectile
   :bind(
@@ -214,7 +223,7 @@
   :init
   ;(setq gptel-api-key (getenv "OPENAI_API_KEY"))      Use gemini instead
   (setq
-   gptel-model "gemini-2.0-flash-thinking-exp"
+   gptel-model "gemini-2.0-flash"
    gptel-backend (gptel-make-gemini "Gemini"
                    :key (getenv "GEMINI_API_KEY")
                    :stream t))
@@ -626,10 +635,16 @@
     )
   )
 
+(use-package eat
+  :vc (:url "https://codeberg.org/akib/emacs-eat")
+  )
+
 (use-package claude-code-ide
    :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
    :bind ("C-c C-'" . claude-code-ide-menu) ; Set your favorite keybinding
    :config
+   (setq claude-code-ide-terminal-backend 'eat) ; Use eat as terminal backend
+   (setq claude-code-ide-cli-extra-flags "--model opus")
    (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
 
 ;; Show how long it took to load config
