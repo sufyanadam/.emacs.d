@@ -203,12 +203,13 @@
   (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
 
+;; TODO: Remove this
 ;; Python lsp
-(use-package lsp-pyright
-  :ensure t
-  :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
-  :hook (python-mode . (λ () (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
+; (use-package lsp-pyright
+;   :ensure t
+;   :custom (lsp-pyright-langserver-command "pyright") ;; or basedpyright
+;   :hook (python-mode . (λ () (require 'lsp-pyright)
+;                           (lsp))))  ; or lsp-deferred
 
 
 ;; Projectile everywhere
