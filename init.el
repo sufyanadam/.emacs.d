@@ -640,6 +640,9 @@
   :vc (:url "https://codeberg.org/akib/emacs-eat")
   )
 
+(use-package monet
+  :vc (:url "https://github.com/stevemolitor/monet" :rev :newest))
+
 (use-package claude-code-ide
    :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
    :bind ("C-c C-'" . claude-code-ide-menu) ; Set your favorite keybinding
