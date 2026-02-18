@@ -196,6 +196,8 @@
  '(swift-mode:basic-offset 2)
  '(swift3-mode:basic-offset 2)
  '(tab-width 2)
+ '(typescript-expr-indent-offset 0)
+ '(typescript-indent-level 2)
  '(web-mode-attr-indent-offset 2)
  '(web-mode-attr-value-indent-offset 2)
  '(web-mode-code-indent-offset 2)
