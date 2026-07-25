@@ -651,6 +651,17 @@
    (setq claude-code-ide-cli-extra-flags "--model opus")
    (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
 
+;; agent-shell
+(use-package agent-shell
+    :ensure t
+    :ensure-system-package
+    ;; Add agent installation configs here
+    (
+     ; examples:
+     ;(claude . "brew install claude-code")
+     ;(claude-agent-acp . "npm install -g @agentclientprotocol/claude-agent-acp"))
+    )
+
 ;; Show how long it took to load config
 (let ((elapsed (float-time (time-subtract (current-time)
 					  emacs-start-time))))
