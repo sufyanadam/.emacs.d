@@ -461,7 +461,7 @@
          (set-face-background 'ediff-odd-diff-A "#292521")
          (set-face-foreground 'ediff-even-diff-A "#ffffff")
          (set-face-background 'ediff-even-diff-A "#292527")))
-    (add-hook 'magit-mode-hook 'magit-load-config-extensions)
+    ;(add-hook 'magit-mode-hook 'magit-load-config-extensions)  This is causing issues. Disabling for now.
     (defun magit-save-and-exit-commit-mode ()
       (interactive)
       (save-buffer)
